@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperledger Fabric CLI Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hyperledger Fabric Command Interface</h1>
+        <form id="commandForm">
+            <label for="commandType">Command Type:</label>
+            <select id="commandType" required>
+                <option value="create">Create Asset</option>
+                <option value="query">Query Asset</option>
+                <option value="update">Update Asset</option>
+                <option value="transfer">Transfer Asset</option>
+            </select>
+
+            <label for="assetId">Asset ID:</label>
+            <input type="text" id="assetId" placeholder="Asset ID" required>
+
+            <label for="assetOwner">Owner (only for create):</label>
+            <input type="text" id="assetOwner" placeholder="Owner (only for create)">
+
+            <label for="assetDescription">Description:</label>
+            <input type="text" id="assetDescription" placeholder="Description">
+
+            <label for="assetValue">Value:</label>
+            <input type="text" id="assetValue" placeholder="Value">
+
+            <label for="newOwner">New Owner (only for transfer):</label>
+            <input type="text" id="newOwner" placeholder="New Owner (only for transfer)">
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="output" class="output"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

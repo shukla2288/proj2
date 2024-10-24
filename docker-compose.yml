@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  fabric:
+    image: hyperledger/fabric-peer:latest
+    ports:
+      - "7051:7051"
+      - "7053:7053"
+    environment:
+      # Add necessary environment variables for the Fabric network
+      - CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+
+  frontend:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - fabric
